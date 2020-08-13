@@ -1,0 +1,26 @@
+<div fxLayout="row" class="login">
+    <mat-card class="login-card">
+        <h4> Login </h4>
+
+        <form #loginForm="ngForm">
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <mat-form-field fxFlex floatLabel="always" shouldLabelFloat="false" appearance="outline">
+                    <mat-label> Usuário </mat-label>
+
+                    <input matInput type="text" name="user" required>
+                </mat-form-field>
+
+                <mat-form-field fxFlex floatLabel="always" shouldLabelFloat="false" appearance="outline">
+                    <mat-label> Senha </mat-label>
+
+                    <input matInput type="password" name="password" required>
+                </mat-form-field>
+
+                <div class="btn-login">
+                    <button mat-raised-button color="primary" [disabled]="!loginForm.valid"
+                        [class.disabled]="!loginForm.valid"> Entrar </button>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

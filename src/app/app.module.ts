@@ -4,14 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { PagesComponent } from './pages/pages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PagesComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FlexLayoutModule,
     RouterModule.forRoot(AppRoutes, { useHash: true }),
   ],
