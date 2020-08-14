@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { DragonService } from 'src/app/providers/services/dragon.service';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Dragao } from 'src/app/providers/models/dragao.model';
+import { DragonService } from 'src/app/providers/services/dragon.service';
+import { CheckModalComponent } from 'src/app/shared/check-modal/check-modal.component';
+import { SnackType, MessageType } from 'src/app/shared/feedback-body/feedback-body.model';
 
 @Component({
   selector: 'app-dragon-list',
@@ -20,6 +23,7 @@ export class DragonListComponent implements OnInit {
   constructor(
     private service: DragonService,
     private router: Router,
+    private dialog: MatDialog,
   ) {
     window.addEventListener('resize', () => {
       this.displayWindowResize();
@@ -31,7 +35,44 @@ export class DragonListComponent implements OnInit {
     this.getDragoes();
   }
 
-  getDragoes() {
+  public newRecord() {
+    const url = this.getLocation();
+    const formUrl = url + '/form';
+    this.router.navigate([formUrl]);
+  }
+
+  public edit(obj: Dragao) {
+    const url = this.getLocation();
+    const formUrl = url + '/form';
+    this.router.navigate([formUrl, (obj as any).id]);
+  }
+
+  public delete(obj: Dragao) {
+    const dialogRef = this.dialog.open(CheckModalComponent, {
+      width: '470px',
+      data: 'Deletar item ?'
+    });
+
+    dialogRef.afterClosed().subscribe(
+      (result: boolean) => {
+        if (result) {
+          this.service.remove((obj).id).subscribe(
+            () => {
+              this.getDragoes();
+              this.service.feedService.simpleFeed(SnackType.SUCCESS, MessageType.DELETE);
+            }
+          );
+        }
+      });
+  }
+
+  private getLocation() {
+    const tree = this.router.parseUrl(this.router.url);
+
+    return tree.root.children['primary'].segments.map(it => it.path).join('/');
+  }
+
+  private getDragoes() {
     this.dataSource = new MatTableDataSource([]);
     this.service.getAll().subscribe(
       success => {

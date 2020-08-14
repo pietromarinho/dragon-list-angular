@@ -1,15 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSidenav } from '@angular/material/sidenav';
 import { RouteConfigLoadEnd, RouteConfigLoadStart, Router, RouterEvent } from '@angular/router';
 import { FeedBackService } from 'src/app/providers/services/feedback.service';
 import { SecurityService } from 'src/app/providers/services/security.service';
+import { CheckModalComponent } from '../check-modal/check-modal.component';
 import { SnackType } from '../feedback-body/feedback-body.model';
 import { LoaderService } from '../loader/loader.service';
-import { CheckModalComponent } from '../check-modal/check-modal.component';
-
-declare var $: any;
-
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -53,14 +49,6 @@ export class NavigationComponent implements OnInit {
 
   goTo(route: string) {
     this.router.navigate([`${route}`]);
-  }
-
-  menuOpened() {
-    $('.options').addClass('rotate');
-  }
-
-  menuClosed() {
-    $('.options').removeClass('rotate');
   }
 
   setRouterEvents(): void {

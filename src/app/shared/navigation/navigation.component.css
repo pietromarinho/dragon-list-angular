@@ -42,27 +42,14 @@
   background-color: #1c2b40;
 }
 
-.sidenav-container .sidenav-content .main-navbar ::ng-deep button.settings {
+.sidenav-container .sidenav-content .main-navbar button.settings {
   position: absolute;
   box-shadow: none;
   width: 30px;
   height: 30px;
   top: 15px;
   right: 5%;
-}
-
-.sidenav-container .sidenav-content .main-navbar ::ng-deep button.settings span {
-  transform: rotateZ(0);
-  transition: transform 0.4s linear;
   display: flex;
+  align-items: center;
   justify-content: center;
-}
-
-.sidenav-container .sidenav-content .main-navbar ::ng-deep button.settings.rotate span {
-  transform: rotateZ(160deg);
-}
-
-.sidenav-container .sidenav-content .main-navbar ::ng-deep button.settings mat-icon {
-  font-size: 20px;
-  line-height: 0;
 }

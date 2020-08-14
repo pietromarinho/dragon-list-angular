@@ -35,30 +35,16 @@
             height: 70px;
             background-color: #1c2b40;
 
-            ::ng-deep button.settings {
+            button.settings {
                 position: absolute;
                 box-shadow: none;
                 width: 30px;
                 height: 30px;
                 top: 15px;
                 right: 5%;
-
-                span {
-                    transform: rotateZ(0);
-                    transition: transform 0.4s linear;
-                    display: flex;
-                    justify-content: center;
-                }
-
-                &.rotate {
-                    span {
-                        transform: rotateZ(160deg);
-                    }
-                }
-                mat-icon {
-                    font-size: 20px;
-                    line-height: 0;
-                }
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }

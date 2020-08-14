@@ -4,7 +4,8 @@
             <h4 class="list-size"> Dragões cadastrados ({{totalElements}}) </h4>
         </div>
         <div fxFlex fxLayoutAlign="end center">
-            <button mat-mini-fab class="btn-cadastrar" matTooltip="Adicionar Dragão" [matTooltipPosition]="'left'">
+            <button mat-mini-fab class="btn-cadastrar" matTooltip="Adicionar Dragão" [matTooltipPosition]="'left'"
+                (click)="newRecord()">
                 <img src="../../../../assets/icons/dragon.svg" alt="Dragão">
             </button>
         </div>
@@ -30,7 +31,8 @@
                 <td class="text-right acoes" mat-cell *matCellDef="let item">
 
                     <ng-container *ngIf="!isMobile">
-                        <button mat-mini-fab class="btn-edit" matTooltip="Editar" [matTooltipPosition]="'left'">
+                        <button mat-mini-fab class="btn-edit" matTooltip="Editar" [matTooltipPosition]="'left'"
+                            (click)="edit(item)">
                             <mat-icon> edit </mat-icon>
                         </button>
 
@@ -38,16 +40,17 @@
                             <mat-icon> visibility </mat-icon>
                         </button>
 
-                        <button mat-mini-fab class="btn-delete" matTooltip="Excluir" [matTooltipPosition]="'left'">
+                        <button mat-mini-fab class="btn-delete" matTooltip="Excluir" [matTooltipPosition]="'left'"
+                            (click)="delete(item)">
                             <mat-icon> delete </mat-icon>
                         </button>
                     </ng-container>
 
                     <ng-container *ngIf="isMobile">
                         <mat-menu #listClienteMenu="matMenu">
+                            <button mat-menu-item (click)="edit(item)"> Editar </button>
                             <button mat-menu-item> Detalhes </button>
-                            <button mat-menu-item> Editar </button>
-                            <button mat-menu-item> Excluir </button>
+                            <button mat-menu-item (click)="delete(item)"> Excluir </button>
                         </mat-menu>
 
                         <button mat-mini-fab class="more-btn" [matMenuTriggerFor]="listClienteMenu">
