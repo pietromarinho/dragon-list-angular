@@ -28,7 +28,7 @@
       width: 95%;
     }
   }
-  mat-icon {
+  mat-icon.info {
     margin-right: 15px;
     color: #fff;
   }
@@ -40,7 +40,7 @@
       font-size: 10px;
     }
   }
-  i.itriad-close {
+  mat-icon.close {
     color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;

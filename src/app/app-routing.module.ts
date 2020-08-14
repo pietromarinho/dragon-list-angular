@@ -1,15 +1,16 @@
 import { Routes } from '@angular/router';
-import { PagesComponent } from './pages/pages.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PagesComponent } from './pages/pages.component';
+import { HomePageComponent } from './shared/home-page/home-page.component';
 
 export const AppRoutes: Routes = [
     {
         path: '',
-        component: LoginComponent,
+        component: HomePageComponent,
         children: [
             {
                 path: '',
-                component: LoginComponent
+                component: HomePageComponent
             },
         ]
     },
@@ -25,7 +26,7 @@ export const AppRoutes: Routes = [
     },
     {
         path: '**',
-        component: LoginComponent
+        component: HomePageComponent
 
     }
 ];

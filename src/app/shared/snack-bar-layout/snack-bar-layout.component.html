@@ -1,6 +1,6 @@
 <div id="snack-layout">
-    <mat-icon *ngIf="isFine()"> done </mat-icon>
-    <mat-icon *ngIf="!isFine()"> info </mat-icon>
+    <mat-icon class="info" *ngIf="isFine()"> done </mat-icon>
+    <mat-icon class="info" *ngIf="!isFine()"> info </mat-icon>
 
 
     <div class="alert">
@@ -14,5 +14,5 @@
         </ng-container>
     </div>
 
-    <mat-icon (click)="close()"> close </mat-icon>
+    <mat-icon class="close" (click)="close()"> close </mat-icon>
 </div>

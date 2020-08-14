@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FeedBackService } from '../../providers/services/feedback.service';
-import { SnackType } from 'src/app/shared/feedback-body/feedback-body.model';
+import { Router } from '@angular/router';
 import { Login } from 'src/app/providers/models/login.model';
+import { FeedBackService } from 'src/app/providers/services/feedback.service';
+import { SecurityService } from 'src/app/providers/services/security.service';
+import { SnackType } from 'src/app/shared/feedback-body/feedback-body.model';
 
 @Component({
   selector: 'app-login',
@@ -13,17 +15,15 @@ export class LoginComponent implements OnInit {
   user: Login = new Login();
 
   constructor(
-    private feedService: FeedBackService
+    private service: SecurityService
   ) { }
 
   ngOnInit(): void {
   }
 
-  doLogin() {
-    if (this.user.usuario === 'admin' && this.user.senha === 'root') {
-      this.feedService.simpleFeed(SnackType.SUCCESS, 'Logado');
-    } else {
-      this.feedService.simpleFeed(SnackType.ERROR, 'Usuário ou senha inválidos!');
+  public doLogin() {
+    if (this.user.usuario.length > 0 && this.user.senha.length > 0) {
+      this.service.login(this.user);
     }
   }
 

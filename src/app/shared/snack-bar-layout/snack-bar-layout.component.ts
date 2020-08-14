@@ -7,16 +7,12 @@ import { SnackBody, SnackType } from '../feedback-body/feedback-body.model'
   templateUrl: './snack-bar-layout.component.html',
   styleUrls: ['./snack-bar-layout.component.css']
 })
-export class SnackBarLayoutComponent implements OnInit {
+export class SnackBarLayoutComponent {
 
   constructor(
     public snackBarRef: MatSnackBarRef<SnackBarLayoutComponent>,
     @Inject(MAT_SNACK_BAR_DATA) public data: SnackBody
   ) { }
-
-  ngOnInit() { 
-    console.log(this.data);
-  }
 
   public isFine(): boolean {
     return this.data.type === SnackType.SUCCESS || this.data.type === SnackType.INFO;
