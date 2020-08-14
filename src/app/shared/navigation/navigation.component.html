@@ -1,6 +1,6 @@
 <div fxLayout="column" fxFill>
     <mat-sidenav-container class="sidenav-container" fxFlex>
-        <mat-sidenav #drawer class="sidenav" fixedInViewport="false" [attr.role]="isMobile ? 'dialog' : 'navigation'"
+        <!-- <mat-sidenav #drawer class="sidenav" fixedInViewport="false" [attr.role]="isMobile ? 'dialog' : 'navigation'"
             [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile" [disableClose]="!isMobile">
 
             <mat-nav-list class="sidenav-list">
@@ -12,13 +12,13 @@
                     </a>
                 </mat-accordion>
             </mat-nav-list>
-        </mat-sidenav>
+        </mat-sidenav> -->
         <mat-sidenav-content class="sidenav-content" fxFlex>
             <mat-toolbar class="main-navbar">
-                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
                     *ngIf="isMobile">
                     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-                </button>
+                </button> -->
 
                 <mat-menu #actionsMenu="matMenu" class="menu-config">
                     <button mat-menu-item routerLinkActive="active">

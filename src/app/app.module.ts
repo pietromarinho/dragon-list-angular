@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
+import { CheckModalComponent } from './shared/check-modal/check-modal.component';
 import { HomePageComponent } from './shared/home-page/home-page.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { LoaderService } from './shared/loader/loader.service';
@@ -23,6 +24,7 @@ import { SnackBarLayoutComponent } from './shared/snack-bar-layout/snack-bar-lay
     LoaderComponent,
     HomePageComponent,
     NavigationComponent,
+    CheckModalComponent
   ],
   imports: [
     BrowserModule,

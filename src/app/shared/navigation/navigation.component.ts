@@ -6,6 +6,7 @@ import { FeedBackService } from 'src/app/providers/services/feedback.service';
 import { SecurityService } from 'src/app/providers/services/security.service';
 import { SnackType } from '../feedback-body/feedback-body.model';
 import { LoaderService } from '../loader/loader.service';
+import { CheckModalComponent } from '../check-modal/check-modal.component';
 
 declare var $: any;
 
@@ -16,7 +17,7 @@ declare var $: any;
 })
 export class NavigationComponent implements OnInit {
 
-  @ViewChild('drawer', { static: true }) sidenav: MatSidenav;
+  // @ViewChild('drawer', { static: true }) sidenav: MatSidenav;
   isMobile = false;
 
   constructor(
@@ -37,18 +38,17 @@ export class NavigationComponent implements OnInit {
   }
 
   public logout(): void {
-    // const dialogRef = this.dialog.open(CheckModalComponent, {
-    //   width: '470px',
-    //   data: 'Sair da aplicação?'
-    // });
+    const dialogRef = this.dialog.open(CheckModalComponent, {
+      width: '470px',
+      data: 'Sair da aplicação?'
+    });
 
-    // dialogRef.afterClosed().subscribe(
-    //   (result: boolean) => {
-    //     if (result) {
-    //       this.security.logout();
-    //     }
-    //   });
-    this.security.logout();
+    dialogRef.afterClosed().subscribe(
+      (result: boolean) => {
+        if (result) {
+          this.security.logout();
+        }
+      });
   }
 
   goTo(route: string) {
@@ -73,9 +73,9 @@ export class NavigationComponent implements OnInit {
 
       // close sidebar when navigate if is mobile screen
       if (event instanceof RouterEvent && this.isMobile) {
-        setTimeout(() => {
-          this.sidenav.close();
-        }, 300);
+        // setTimeout(() => {
+        //   this.sidenav.close();
+        // }, 300);
       }
 
       // show load between modules loading
