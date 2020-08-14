@@ -6,6 +6,7 @@ import { Dragao } from 'src/app/providers/models/dragao.model';
 import { DragonService } from 'src/app/providers/services/dragon.service';
 import { CheckModalComponent } from 'src/app/shared/check-modal/check-modal.component';
 import { SnackType, MessageType } from 'src/app/shared/feedback-body/feedback-body.model';
+import { DragonDetailsComponent } from '../dragon-details/dragon-details.component';
 
 @Component({
   selector: 'app-dragon-list',
@@ -66,6 +67,14 @@ export class DragonListComponent implements OnInit {
       });
   }
 
+  public showDetails(item: Dragao) {
+    const screenWidth: number = window.innerWidth;
+    this.dialog.open(DragonDetailsComponent, {
+      width: screenWidth > 700 ? '800px' : screenWidth + 'px',
+      data: item,
+      id: 'id-dragon-details'
+    });
+  }
   private getLocation() {
     const tree = this.router.parseUrl(this.router.url);
 

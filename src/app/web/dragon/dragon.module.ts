@@ -7,11 +7,12 @@ import { MaterialModule } from '../../shared/material/material.module';
 import { DragonFormComponent } from "./dragon-form/dragon-form.component";
 import { DragonListComponent } from "./dragon-list/dragon-list.component";
 import { DragonRoutes } from './dragon.routing';
+import { DragonDetailsComponent } from './dragon-details/dragon-details.component';
 
 
 
 @NgModule({
-    declarations: [DragonListComponent, DragonFormComponent],
+    declarations: [DragonListComponent, DragonFormComponent, DragonDetailsComponent],
     imports: [
         RouterModule.forChild(DragonRoutes),
         CommonModule,

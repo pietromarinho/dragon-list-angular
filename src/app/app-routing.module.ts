@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
+import { AdminGuard } from './security/admin.guard';
 import { HomePageComponent } from './shared/home-page/home-page.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 
@@ -8,6 +9,7 @@ export const AppRoutes: Routes = [
     {
         path: '',
         component: NavigationComponent,
+        canActivate: [AdminGuard],
         children: [
             {
                 path: '',

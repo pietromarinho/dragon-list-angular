@@ -1,0 +1,66 @@
+::ng-deep #id-dragon-details {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 55px 24px 24px 24px;
+}
+
+#dragon-details-modal {
+    .modal-header {
+        position: relative;
+        .close-btn {
+            border-radius: 50%;
+            border: 1px solid #51b5ab;
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            box-shadow: none;
+            background-color: rgba(62, 166, 209, 0.8) !important;
+
+            mat-icon {
+                display: flex;
+                color: #ffffff;
+            }
+        }
+    }
+    .content {
+        box-shadow: 2px 6px 8px 0 #959595;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #ffffff;
+        h3 {
+            font-size: 22px;
+            font-weight: normal;
+            margin: 25px 0 0 0;
+            padding: 6px 0;
+            text-align: center;
+        }
+        .modal-box {
+            .modal-content {
+                background-color: #ffffff;
+                padding: 5%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    ::ng-deep #dragon-details-modal {
+        padding: 0;
+    }
+    #dragon-details-modal {
+        transform: translateY(-2%) !important;
+        .modal-header {
+            z-index: 99;
+        }
+        .content {
+            max-height: calc(100vh - 175px);
+            h3 {
+                font-size: 18px;
+            }
+            .modal-box {
+                overflow: auto;
+                max-height: calc(100vh - 250px);
+            }
+        }
+    }
+}

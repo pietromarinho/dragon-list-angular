@@ -1,0 +1,46 @@
+<div id="dragon-details-modal">
+    <div class="modal-header">
+        <button mat-mini-fab class="close-btn" [mat-dialog-close]="false">
+            <mat-icon> close </mat-icon>
+        </button>
+    </div>
+
+    <div class="content">
+        <h3 class="green-text"> Detalhes do Dragão </h3>
+        <mat-divider></mat-divider>
+        <div class="modal-box">
+            <div class="modal-content">
+                <div fxLayout="row" fxLayoutAlign="space-between" fxLayout.lt-md="column">
+                    <div fxFlex="45" class="info-detail">
+                        <label class="green-text"> Nome </label>
+                        <h5>
+                            {{dragao.name}}
+                        </h5>
+                        <hr>
+                    </div>
+
+                    <div fxFlex="45" class="info-detail">
+                        <label class="green-text"> Tipo </label>
+                        <h5>
+                            {{dragao.type}}
+                        </h5>
+                        <hr>
+                    </div>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-between" fxLayout.lt-md="column">
+                    <div fxFlex="45" class="info-detail">
+                        <label class="green-text"> Criação </label>
+                        <h5>
+                            {{creationDate}}
+                        </h5>
+                        <hr>
+                    </div>
+
+                    <div fxFlex="45" class="info-detail">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
