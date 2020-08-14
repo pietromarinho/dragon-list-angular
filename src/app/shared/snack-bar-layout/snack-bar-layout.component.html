@@ -1,0 +1,18 @@
+<div id="snack-layout">
+    <mat-icon *ngIf="isFine()"> done </mat-icon>
+    <mat-icon *ngIf="!isFine()"> info </mat-icon>
+
+
+    <div class="alert">
+        <h4 *ngIf="isError()" class="message">{{data.data}}</h4>
+        <h4 *ngIf="!isError()" class="message">{{data.data}}</h4>
+
+        <ng-container *ngIf="isError()">
+            <ul *ngIf="data.data.errors">
+                <li *ngFor="let erro of data.data.errors">{{erro.message}}</li>
+            </ul>
+        </ng-container>
+    </div>
+
+    <mat-icon (click)="close()"> close </mat-icon>
+</div>

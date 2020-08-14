@@ -15,6 +15,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 300px;
+  min-width: 300px;
 }
 
 .login .login-card h4 {
@@ -25,7 +27,12 @@
   text-align: center;
 }
 
+.login .login-card form {
+  width: 100%;
+}
+
 .login .login-card form ::ng-deep mat-form-field {
+  width: 100%;
   padding: 0;
 }
 
@@ -48,4 +55,14 @@
   height: 40px;
   box-shadow: 2px 4px 6px 0 rgba(140, 140, 140, 0.5);
   font-size: 70%;
+}
+
+@media only screen and (max-width: 700px) {
+  .login {
+    background-image: url("/assets/images/login-mobile.png");
+  }
+  .login .login-card {
+    width: auto !important;
+    min-width: auto !important;
+  }
 }
