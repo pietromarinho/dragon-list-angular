@@ -12,13 +12,22 @@ import { Dragao } from 'src/app/providers/models/dragao.model';
 export class DragonListComponent implements OnInit {
 
   dataSource: MatTableDataSource<Dragao>;
+  displayedColumns: string[] = ['nome', 'tipo', 'acoes'];
+  totalElements = 10;
+
+  public isMobile = false;
 
   constructor(
     private service: DragonService,
     private router: Router,
-  ) { }
+  ) {
+    window.addEventListener('resize', () => {
+      this.displayWindowResize();
+    });
+  }
 
   ngOnInit(): void {
+    this.isMobile = window.innerWidth < 700;
     this.getDragoes();
   }
 
@@ -27,9 +36,13 @@ export class DragonListComponent implements OnInit {
     this.service.getAll().subscribe(
       success => {
         this.dataSource = new MatTableDataSource(success);
+        this.dataSource.data.sort((itemA, itemB) => (itemA.name.toLowerCase() < itemB.name.toLowerCase()) ? -1 : 1);
         console.log(success);
       }
     )
   }
 
+  private displayWindowResize(): void {
+    this.isMobile = window.innerWidth < 700;
+  }
 }

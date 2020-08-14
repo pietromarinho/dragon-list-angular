@@ -39,7 +39,7 @@
 
 .sidenav-container .sidenav-content .main-navbar {
   height: 70px;
-  background-color: transparent;
+  background-color: #1c2b40;
 }
 
 .sidenav-container .sidenav-content .main-navbar ::ng-deep button.settings {

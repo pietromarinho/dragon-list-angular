@@ -10,3 +10,126 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 24px;
 }
+
+* {
+  scrollbar-color: #c3c3c3 rgba(12, 12, 12, 0.1);
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  border-radius: 10px;
+  background: rgba(12, 12, 12, 0.1);
+  border: 0;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(12, 12, 12, 0.02);
+  border: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #aeaeae;
+  border: 0;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #8f8f8f;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background: #8f8f8f;
+}
+
+.page-form, .page-list {
+  padding: 40px 5% 20px 5%;
+  height: calc(100% - 130px);
+}
+
+.page-list {
+  background-color: #233451;
+}
+
+/* Table Container Style */
+
+.page-list .list-header-size h4 {
+  color: #ffffff;
+}
+
+.page-list .table-container {
+  max-height: calc(100vh - 230px);
+  overflow: auto;
+}
+
+.page-list .table-container table {
+  width: 100%;
+  text-align: center;
+}
+
+.page-list .table-container table th.mat-header-cell {
+  background-color: #1c2b40;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.page-list .table-container table td.mat-cell {
+  background-color: #fcfcfc;
+  font-size: 12px;
+}
+
+.page-list .mat-paginator-container .mat-icon-button, .page-list .mat-paginator-container .mat-select-arrow {
+  color: #f6d359 !important;
+}
+
+.page-list .mat-paginator-container {
+  background-color: #f6f6f6;
+}
+
+.page-list .table-container table td.acoes {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.page-list .table-container table td.acoes>*, td.acoes>div>* {
+  box-shadow: none !important;
+  margin: 0 10px;
+}
+
+.page-list .table-container table td.acoes>div {
+  display: flex;
+  align-items: center;
+}
+
+button.btn-edit {
+  background-color: rgba(62, 166, 209, 0.2) !important;
+  color: #3ea6d1b5 !important;
+}
+
+button.btn-delete {
+  background-color: #f5e7e7 !important;
+  color: #ee7d7d !important;
+}
+
+button.btn-details {
+  background-color: rgba(246, 211, 89, 0.2) !important;
+  color: #f6d359 !important;
+}
+
+button.btn-cadastrar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.btn-cadastrar img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Table Container Style */

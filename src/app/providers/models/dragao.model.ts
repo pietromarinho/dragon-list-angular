@@ -1,6 +1,7 @@
 export class Dragao {
     id: number;
-    nome: string;
-    tipo: string;
-    data: Date;
+    name: string;
+    type: string;
+    createdAt: Date;
+    histories: any[];
 }
