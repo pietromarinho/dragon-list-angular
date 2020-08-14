@@ -7,7 +7,7 @@
   .modal-header {
     position: relative;
     .icon-header {
-      background-color: #51b5ab;
+      background-color: #1c2b40;
       border-radius: 50%;
       display: block;
       margin: 0 auto;
@@ -18,10 +18,12 @@
       width: 80px;
       height: 80px;
       text-align: center;
-      i {
-        font-size: 40px;
+      mat-icon {
+        font-size: 30px;
         color: #fff;
         font-weight: 500;
+        width: 30px;
+        height: 30px;
       }
     }
     .close-btn {

@@ -46,10 +46,18 @@ body {
 .page-form, .page-list {
   padding: 40px 5% 20px 5%;
   height: calc(100% - 130px);
+  background-color: #233451;
 }
 
-.page-list {
-  background-color: #233451;
+.centralizado {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centralizado.reverse {
+  flex-direction: column;
 }
 
 /* Table Container Style */
@@ -133,3 +141,41 @@ button.btn-cadastrar img {
 }
 
 /* Table Container Style */
+
+/* Form Container Style */
+
+.page-form .header-form {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 2rem;
+}
+
+.page-form mat-form-field {
+  font-size: 16px;
+  margin-top: 2rem;
+}
+
+.page-form .form-actions {
+  margin-top: 50px;
+}
+
+.page-form .form-actions button {
+  padding: 7px 155px;
+}
+
+button.btn-cancelar {
+  background-color: #f2f2f2;
+  color: #1c2b40;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  font-weight: bold;
+}
+
+button.btn-confirmar {
+  background-color: #63b562;
+  color: #ffffff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  font-weight: bold;
+}
+
+/* Form Container Style */

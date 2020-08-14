@@ -16,7 +16,7 @@ export class DragonListComponent implements OnInit {
 
   dataSource: MatTableDataSource<Dragao>;
   displayedColumns: string[] = ['nome', 'tipo', 'acoes'];
-  totalElements = 10;
+  totalElements = 0;
 
   public isMobile = false;
 
@@ -78,7 +78,7 @@ export class DragonListComponent implements OnInit {
       success => {
         this.dataSource = new MatTableDataSource(success);
         this.dataSource.data.sort((itemA, itemB) => (itemA.name.toLowerCase() < itemB.name.toLowerCase()) ? -1 : 1);
-        console.log(success);
+        this.totalElements = success.length;
       }
     )
   }

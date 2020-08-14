@@ -1,1 +1,34 @@
-<p>dragon-form works!</p>
+<form #powerForm="ngForm" class="page-form">
+    <h4 class="header-form">{{edit ? 'Edição de Dragão' : 'Cadastro de Dragão'}}</h4>
+
+    <mat-card>
+        <div fxLayout="row" fxLayoutAlign="space-between" fxLayout.lt-md="column">
+            <div fxFlex="45">
+                <mat-form-field fxFlex floatLabel="always" shouldLabelFloat="false" appearance="outline">
+                    <mat-label> Nome </mat-label>
+
+                    <input matInput type="text" name="nome" [(ngModel)]="obj.name" required>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="45" fxFlex.lt-md="45">
+                <mat-form-field fxFlex floatLabel="always" shouldLabelFloat="false" appearance="outline">
+                    <mat-label> Tipo </mat-label>
+
+                    <input matInput type="text" name="tipo" [(ngModel)]="obj.type" required>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="form-actions" fxLayout="row" fxLayoutAlign="space-between">
+            <div fxFlex="45" fxLayoutAlign="end" fxLayoutAlign.lt-md="center">
+                <button mat-raised-button class="btn-confirmar" type="submit"
+                    [disabled]="!powerForm.valid">Salvar</button>
+            </div>
+            <div fxFlex="45" fxLayoutAlign.lt-md="center">
+                <button mat-raised-button class="btn-cancelar" type="button" (click)="returnScreen()"> Cancelar
+                </button>
+            </div>
+        </div>
+    </mat-card>
+</form>

@@ -8,7 +8,7 @@
 }
 
 #check-modal .modal-header .icon-header {
-  background-color: #51b5ab;
+  background-color: #1c2b40;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
@@ -21,10 +21,12 @@
   text-align: center;
 }
 
-#check-modal .modal-header .icon-header i {
-  font-size: 40px;
+#check-modal .modal-header .icon-header mat-icon {
+  font-size: 30px;
   color: #fff;
   font-weight: 500;
+  width: 30px;
+  height: 30px;
 }
 
 #check-modal .modal-header .close-btn {

@@ -23,7 +23,8 @@ export class SecurityService {
       localStorage.setItem('token', 'tokenOK');
       this.afterAuthenticate();
     } else {
-      this.feedService.simpleFeed(SnackType.ERROR, 'Usuário ou senha inválido!')
+      this.feedService.simpleFeed(SnackType.ERROR, 'Usuário ou senha inválido!');
+      LoaderService.hide();
     }
   }
 
@@ -53,6 +54,7 @@ export class SecurityService {
         this.router.navigate(['/dragoes']);
       }
     }
+    LoaderService.hide();
   }
 
 }
