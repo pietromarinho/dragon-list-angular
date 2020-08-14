@@ -1,16 +1,18 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './shared/material/material.module';
-import { SnackBarLayoutComponent } from './shared/snack-bar-layout/snack-bar-layout.component';
+import { HomePageComponent } from './shared/home-page/home-page.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { LoaderService } from './shared/loader/loader.service';
-import { HomePageComponent } from './shared/home-page/home-page.component';
+import { MaterialModule } from './shared/material/material.module';
+import { NavigationComponent } from './shared/navigation/navigation.component';
+import { SnackBarLayoutComponent } from './shared/snack-bar-layout/snack-bar-layout.component';
 
 
 @NgModule({
@@ -19,12 +21,14 @@ import { HomePageComponent } from './shared/home-page/home-page.component';
     PagesComponent,
     SnackBarLayoutComponent,
     LoaderComponent,
-    HomePageComponent
+    HomePageComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    HttpClientModule,
     MaterialModule,
     RouterModule.forRoot(AppRoutes, { useHash: true }),
   ],

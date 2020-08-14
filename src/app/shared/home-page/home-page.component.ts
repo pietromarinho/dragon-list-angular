@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
 
   private checkRoute() {
     if (this.securityService.isAuthenticated()) {
-      this.router.navigate(['/dragon']);
+      this.router.navigate(['dragon']);
       return;
     }
 

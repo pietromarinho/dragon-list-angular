@@ -1,16 +1,21 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
 import { PagesComponent } from './pages/pages.component';
 import { HomePageComponent } from './shared/home-page/home-page.component';
+import { NavigationComponent } from './shared/navigation/navigation.component';
+
 
 export const AppRoutes: Routes = [
     {
         path: '',
-        component: HomePageComponent,
+        component: NavigationComponent,
         children: [
             {
                 path: '',
                 component: HomePageComponent
+            },
+            {
+                path: 'dragon',
+                loadChildren: () => import('./web/dragon/dragon.module').then(m => m.DragonModule),
             },
         ]
     },

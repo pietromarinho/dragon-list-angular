@@ -1,0 +1,65 @@
+.sidenav-container {
+    height: 100%;
+    .sidenav {
+        width: 200px;
+        background-color: #3991a2;
+        ::ng-deep .sidenav-list {
+            margin-top: 5px;
+            .mat-list-item {
+                &:hover,
+                &.active {
+                    background-color: #2d8292;
+                    color: #ffe073;
+                }
+                .mat-list-item-content {
+                    width: 100%;
+                }
+            }
+        }
+        mat-accordion {
+            a {
+                margin: 5px 0;
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+                div + div {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .sidenav-content {
+        background-color: #f6f6f6;
+        .main-navbar {
+            height: 70px;
+            background-color: transparent;
+
+            ::ng-deep button.settings {
+                position: absolute;
+                box-shadow: none;
+                width: 30px;
+                height: 30px;
+                top: 15px;
+                right: 5%;
+
+                span {
+                    transform: rotateZ(0);
+                    transition: transform 0.4s linear;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                &.rotate {
+                    span {
+                        transform: rotateZ(160deg);
+                    }
+                }
+                mat-icon {
+                    font-size: 20px;
+                    line-height: 0;
+                }
+            }
+        }
+    }
+}
