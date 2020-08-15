@@ -82,15 +82,27 @@ body {
   border: none;
 }
 
+button.btn-primary {
+  background: #233451;
+  color: #ffffff;
+}
+
 /* Table Container Style */
 
 .page-list .list-header-size h4 {
   color: #ffffff;
+  font-size: 2rem;
 }
 
 .page-list .table-container {
   max-height: calc(100vh - 230px);
   overflow: auto;
+}
+
+.page-list .table-null {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .page-list .table-container table {
@@ -178,14 +190,6 @@ button.btn-cadastrar img {
   margin-top: 2rem;
 }
 
-.page-form .form-actions {
-  margin-top: 50px;
-}
-
-.page-form .form-actions button {
-  padding: 7px 155px;
-}
-
 button.btn-cancelar {
   background-color: #f2f2f2;
   color: #1c2b40;
@@ -201,3 +205,38 @@ button.btn-confirmar {
 }
 
 /* Form Container Style */
+
+@media only screen and (min-width: 701px) {
+  .page-form .form-actions {
+    margin-top: 50px;
+  }
+  .page-form .form-actions button {
+    padding: 7px 115px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .page-list .list-header-size h4 {
+    font-size: 1rem;
+  }
+  .page-list .table-container table td.acoes button.more-btn {
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page-form .header-form {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 1rem;
+  }
+  .page-form button {
+    width: 100px;
+  }
+}

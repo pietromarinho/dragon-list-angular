@@ -45,10 +45,10 @@
 }
 
 #check-modal .modal-box {
-  box-shadow: 2px 6px 8px 0 #959595;
+  box-shadow: 2px 6px 8px 0;
   border-radius: 8px;
   padding: 10px;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 #check-modal .modal-box .modal-content h3 {

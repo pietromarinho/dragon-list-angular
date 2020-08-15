@@ -1,7 +1,7 @@
 ::ng-deep #id-dragon-details {
     background-color: transparent !important;
     box-shadow: none !important;
-    padding: 55px 24px 24px 24px;
+    padding: 60px 24px 24px 24px;
 }
 
 #dragon-details-modal {
@@ -23,7 +23,7 @@
         }
     }
     .content {
-        box-shadow: 2px 6px 8px 0 #959595;
+        box-shadow: none;
         border-radius: 8px;
         padding: 10px;
         background-color: #ffffff;

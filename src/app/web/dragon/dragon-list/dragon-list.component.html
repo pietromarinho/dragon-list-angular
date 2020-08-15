@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div class="table-container">
+    <div class="table-container" *ngIf="totalElements > 0">
 
         <table #table mat-table [dataSource]="dataSource">
 
@@ -50,7 +50,7 @@
                     <ng-container *ngIf="isMobile">
                         <mat-menu #listClienteMenu="matMenu">
                             <button mat-menu-item (click)="edit(item)"> Editar </button>
-                            <button mat-menu-item> Detalhes </button>
+                            <button mat-menu-item (click)="showDetails(item)"> Detalhes </button>
                             <button mat-menu-item (click)="delete(item)"> Excluir </button>
                         </mat-menu>
 
@@ -65,5 +65,11 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let item; columns: displayedColumns;"></tr>
         </table>
+    </div>
+
+    <div class="table-null" *ngIf="totalElements < 1">
+        <h1>
+            Não há registros
+        </h1>
     </div>
 </div>

@@ -3,8 +3,9 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Dragao } from 'src/app/providers/models/dragao.model';
 import { DragonService } from 'src/app/providers/services/dragon.service';
+import { FeedBackService } from 'src/app/providers/services/feedback.service';
+import { MessageType, SnackType } from 'src/app/shared/feedback-body/feedback-body.model';
 import { LoaderService } from 'src/app/shared/loader/loader.service';
-import { SnackType, MessageType } from 'src/app/shared/feedback-body/feedback-body.model';
 
 @Component({
   selector: 'app-dragon-form',
@@ -22,7 +23,8 @@ export class DragonFormComponent implements OnInit {
     public router: Router,
     public activatedRoute: ActivatedRoute,
     public service: DragonService,
-    public cd: ChangeDetectorRef
+    private feedService: FeedBackService,
+    private cd: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -65,12 +67,16 @@ export class DragonFormComponent implements OnInit {
   }
 
   public updateOrCreate() {
+    LoaderService.show();
     if (!this.edit) {
       this.service.save(this.obj).subscribe(
         success => {
           this.obj = success;
           this.service.feedService.simpleFeed(SnackType.SUCCESS, MessageType.SAVE);
           this.afterSave();
+        }, error => {
+          this.feedService.simpleFeed(SnackType.ERROR, error);
+          LoaderService.hide();
         });
     } else {
       this.service.updateDragon(this.obj.id, this.obj).subscribe(
@@ -78,6 +84,9 @@ export class DragonFormComponent implements OnInit {
           this.obj = success;
           this.service.feedService.simpleFeed(SnackType.SUCCESS, MessageType.UPDATE);
           this.afterSave();
+        }, error => {
+          this.feedService.simpleFeed(SnackType.ERROR, error);
+          LoaderService.hide();
         });
     }
   }
@@ -91,7 +100,7 @@ export class DragonFormComponent implements OnInit {
   }
 
   private afterSave() {
+    LoaderService.hide();
     setTimeout(() => this.returnScreen(), 300);
   }
-
 }
