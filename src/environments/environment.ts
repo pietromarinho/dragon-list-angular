@@ -2,9 +2,11 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const corsAnyWhere: string = 'https://cors-anywhere.herokuapp.com/';
+
 export const environment = {
   production: false,
-  apiUrl: 'http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/',
+  apiUrl: corsAnyWhere + 'http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/',
 };
 
 /*

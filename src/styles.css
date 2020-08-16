@@ -91,7 +91,7 @@ button.btn-primary {
 
 .page-list .list-header-size h4 {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .page-list .table-container {
@@ -239,4 +239,17 @@ button.btn-confirmar {
   .page-form button {
     width: 100px;
   }
+
+  .info-detail {
+    margin-top: 10px;
+  }
+
+  .info-detail h5 {
+    font-size: 15px;
+  }
+  
+  .info-detail label {
+    font-size: 17px;
+  }
+  
 }
