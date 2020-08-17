@@ -1,27 +1,29 @@
-# Dragon
+Dragon
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+Instalação Manual
 
-## Development server
+Clonar a aplicação
+git clone https://github.com/pietromarinho/dragon-list-angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+cd dragon-list-angular
 
-## Code scaffolding
+Instale pacotes npm
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Instale os pacotes npm descritos no package.json e verifique se funciona:
 
-## Build
+npm install
+npm start
+O comando npm start constrói (compila TypeScript e copia ativos) o aplicativo em dist / e observa as alterações nos arquivos de origem.
+Desligue-o manualmente com Ctrl-C.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+scripts npm
+Estes são os comandos mais úteis definidos em package.json:
 
-## Running unit tests
+npm start - executa o compilador TypeScript, a copiadora de ativos e um servidor ao mesmo tempo, todos os três no "modo de observação".
+npm run build - executa o compilador TypeScript e a copiadora de ativos uma vez.
+npm run build: watch - executa o compilador TypeScript e a copiadora de ativos no "modo de observação"; quando ocorrerem alterações nos arquivos de origem, eles serão recompilados ou copiados para dist /.
+npm run lint - executa o tslint nos arquivos do projeto.
+Estes são os scripts relacionados ao teste:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+npm test - constrói o aplicativo e executa os testes Intern (tanto unitários quanto funcionais) uma vez.
+npm run ci - limpa, lints e constrói o aplicativo e executa testes Intern (tanto unitários quanto funcionais) uma vez.
